@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เครื่องมือดิจิทัล รพ.ชุมแพ</title>
+<style>
+/* ภาษาดีไซน์: Clinic UI — clinical calm (พื้นสว่าง เส้นบาง เงาน้อย สีใช้ตามความหมาย) */
+:root {
+  --bg: #f4f6f9; --card: #fff; --line: #dde3ec;
+  --ink: #1c2733; --dim: #64748b; --surface2: #f1f5f9;
+  --topbar: #14304f; --topbar-ink: #fff;
+  --blue: #2563eb; --blue-soft: #dbeafe;
+  --green: #16a34a; --green-soft: #dcfce7;
+  --amber: #d97706; --amber-soft: #fef3c7;
+  --red: #dc2626; --red-soft: #fee2e2;
+  --purple: #7c3aed; --purple-soft: #ede9fe;
+  --r: 10px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Leelawadee UI', 'Segoe UI', 'Sarabun', 'Tahoma', sans-serif;
+  background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.55;
+}
+header {
+  background: var(--topbar); color: var(--topbar-ink);
+  padding: 26px 20px 22px;
+}
+.wrap { max-width: 980px; margin: 0 auto; }
+header h1 { font-size: 1.5rem; font-weight: 800; letter-spacing: .01em; }
+header .sub { color: #cdd9e8; font-size: .95rem; margin-top: 4px; }
+header .note {
+  display: inline-block; margin-top: 12px; font-size: .82rem;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+  padding: 4px 12px; border-radius: 999px;
+}
+main { max-width: 980px; margin: 0 auto; padding: 10px 16px 30px; }
+.sect {
+  display: flex; align-items: baseline; gap: 10px;
+  margin: 26px 4px 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line);
+}
+.sect h2 { font-size: 1.05rem; font-weight: 800; }
+.sect .tag { width: 10px; height: 10px; border-radius: 3px; flex: none; align-self: center; }
+.sect .n { color: var(--dim); font-size: .82rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 14px 14px 12px; display: flex; flex-direction: column; gap: 6px;
+}
+.card h3 { font-size: 1.02rem; font-weight: 700; }
+.card p { font-size: .88rem; color: var(--dim); flex: 1; }
+.card .row { display: flex; gap: 8px; align-items: center; margin-top: 6px; }
+.card a.go {
+  flex: 1; text-align: center; text-decoration: none; font-weight: 700; font-size: .95rem;
+  background: var(--blue-soft); color: #1e3a8a; border: 1.5px solid var(--blue);
+  border-radius: var(--r); padding: 9px 10px; min-height: 42px; display: flex; align-items: center; justify-content: center;
+}
+.card a.go:hover { background: var(--blue); color: #fff; }
+.card a.repo {
+  text-decoration: none; color: var(--dim); font-size: .78rem;
+  border: 1px solid var(--line); border-radius: var(--r); padding: 9px 10px; min-height: 42px;
+  display: flex; align-items: center; background: var(--surface2);
+}
+.card a.repo:hover { color: var(--ink); }
+footer {
+  max-width: 980px; margin: 0 auto; padding: 0 20px 34px; color: var(--dim); font-size: .8rem;
+}
+@media print { header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .card a.repo { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>เครื่องมือดิจิทัล — งานพัฒนาคุณภาพ รพ.ชุมแพ</h1>
+    <div class="sub">ระบบที่พัฒนาใช้เองภายในโรงพยาบาล · 10 ระบบ 4 หมวด · เปิดใช้ได้ทันทีจากหน้านี้</div>
+    <div class="note">ทุกระบบในหน้านี้เป็นเวอร์ชันสาธิต ใช้ข้อมูลจำลองทั้งหมด — ไม่มีข้อมูลผู้ป่วยจริง</div>
+  </div>
+</header>
+<main>
+
+  <div class="sect"><span class="tag" style="background:var(--red)"></span>
+    <h2>ความเสี่ยงและการตอบสนองผู้ป่วยทรุด</h2><span class="n">Patient Safety · RRS</span></div>
+  <div class="grid">
+    <div class="card">
+      <h3>CPRISK — ระบบบริหารความเสี่ยง</h3>
+      <p>รายงานอุบัติการณ์ "กรอกครั้งเดียวที่ รพ." → คิวกรรมการรับเรื่อง-ตอบกลับ → ตรวจทานก่อนส่ง HRMS/NRLS พร้อม dashboard แนวโน้มและเคสเข้าเกณฑ์รุนแรง</p>
+      <div class="row"><a class="go" href="https://mkungsuki.github.io/CPRISK/">เปิดระบบ</a><a class="repo" href="https://github.com/mkungsuki/CPRISK">โค้ด</a></div>
+    </div>
+    <div class="card">
+      <h3>NEWS2 — ผู้ช่วยประเมินหน้าวอร์ด</h3>
+      <p>คะแนนเตือนภัยล่วงหน้า (track &amp; trigger) กดแถบช่วงค่าบนมือถือ ได้ระดับสี + การ์ดแบ่งหน้าที่รายคนเมื่อผู้ป่วยทรุด — afferent limb ของ Rapid Response System ใช้ offline ได้</p>
+      <div class="row"><a class="go" href="https://mkungsuki.github.io/RRS-pwa/">เปิดระบบ</a><a class="repo" href="https://github.com/mkungsuki/RRS-pwa">โค้ด</a></div>
+    </div>
+  </div>
+
+  <div class="sect"><span class="tag" style="background:var(--blue)"></span>
+    <h2>Stroke Fast Track</h2><span class="n">Service Plan สาขาหลอดเลือดสมอง</span></div>
+  <div class="grid">
+    <div class="card">
+      <h3>rtPA Calculator</h3>
+      <p>เครื่องคำนวณยาละลายลิ่มเลือดสำหรับ Stroke Fast Track — ลดการคำนวณมือในสถานการณ์เร่งด่วน</p>
+      <div class="row"><a class="go" href="https://mkungsuki.github.io/RTPA/">เปิดระบบ</a><a class="repo" href="https://github.com/mkungsuki/RTPA">โค้ด</a></div>
+    </div>
+    <div class="card">
+      <h3>เอกสารส่งกลับผู้ป่วย Stroke</h3>
+      <p>ชุดเอกสารส่งกลับ รพช./รพ.สต. สำหรับผู้ป่วยหลอดเลือดสมอง — สร้างเอกสารมาตรฐานเดียวกันทุกราย พิมพ์ได้ทันที</p>
+      <div class="row"><a class="go" href="https://mkungsuki.github.io/stroke-refer-back/">เปิดระบบ</a><a class="repo" href="https://github.com/mkungsuki/stroke-refer-back">โค้ด</a></div>
+    </div>
+  </div>
+
+  <div class="sect"><span class="tag" style="background:var(--green)"></span>
+    <h2>การดูแลต่อเนื่องและส่งกลับ</h2><span class="n">Continuity of Care · Refer Back</span></div>
+  <div class="grid">
+    <div class="card">
+      <h3>เอกสารส่งต่อผู้ป่วยฟอกเลือด (HD)</h3>
+      <p>เครื่องมือประกอบเอกสารส่งต่อผู้ป่วยฟอกเลือดด้วยเครื่องไตเทียม — ครบถ้วนตามหัวข้อมาตรฐาน</p>
+      <div class="row"><a class="go" href="https://mkungsuki.github.io/hd-refer-back/">เปิดระบบ</a><a class="repo" href="https://github.com/mkungsuki/hd-refer-back">โค้ด</a></div>
+    </div>
+    <div class="card">
+      <h3>เอกสารส่งกลับผู้ป่วยล้างไตทางช่องท้อง (CAPD)</h3>
+      <p>เครื่องมือประกอบเอกสารส่งกลับผู้ป่วย CAPD สู่เครือข่าย — รูปแบบเดียวกันทุกราย</p>
+      <div class="row"><a class="go" href="https://mkungsuki.github.io/capd-refer-back/">เปิดระบบ</a><a class="repo" href="https://github.com/mkungsuki/capd-refer-back">โค้ด</a></div>
+    </div>
+    <div class="card">
+      <h3>ตารางนัดกลาง (MOCK)</h3>
+      <p>ต้นแบบระบบนัดหมายกลางของโรงพยาบาล — เห็นภาพรวมคิวนัดทุกคลินิกในจุดเดียว</p>
+      <div class="row"><a class="go" href="https://mkungsuki.github.io/refer-mock-system/">เปิดระบบ</a><a class="repo" href="https://github.com/mkungsuki/refer-mock-system">โค้ด</a></div>
+    </div>
+  </div>
+
+  <div class="sect"><span class="tag" style="background:var(--purple)"></span>
+    <h2>ระบบบริการคลินิก</h2><span class="n">Clinical Services</span></div>
+  <div class="grid">
+    <div class="card">
+      <h3>ระบบรับปรึกษาอายุรกรรม (DEMO)</h3>
+      <p>ต้นแบบระบบรับ-ตอบ consult ระหว่างแผนก — เห็นคิว ตอบกลับเป็นลายลักษณ์อักษร ติดตามได้</p>
+      <div class="row"><a class="go" href="https://mkungsuki.github.io/consult-demo/">เปิดระบบ</a><a class="repo" href="https://github.com/mkungsuki/consult-demo">โค้ด</a></div>
+    </div>
+    <div class="card">
+      <h3>NCD Board (เฟสสาธิต)</h3>
+      <p>กระดานข้อมูลคลินิกโรคไม่ติดต่อเรื้อรัง — ภาพรวมตัวชี้วัดและกลุ่มเสี่ยงของคลินิก</p>
+      <div class="row"><a class="go" href="https://mkungsuki.github.io/ncd-demo/">เปิดระบบ</a><a class="repo" href="https://github.com/mkungsuki/ncd-demo">โค้ด</a></div>
+    </div>
+    <div class="card">
+      <h3>เครื่องคำนวณปรับยา Levodopa ตาม CPG</h3>
+      <p>เครื่องมือช่วยปรับยาพาร์กินสันสำหรับ รพช. ตามแนวทางเวชปฏิบัติ + สมุดจดอาการพิมพ์รายคน</p>
+      <div class="row"><a class="go" href="https://mkungsuki.github.io/levodopa-cpg-calculator/">เปิดระบบ</a><a class="repo" href="https://github.com/mkungsuki/levodopa-cpg-calculator">โค้ด</a></div>
+    </div>
+  </div>
+
+</main>
+<footer>
+  พัฒนาโดยทีมแพทย์ รพ.ชุมแพ · ทุกระบบเป็นเวอร์ชันสาธิต ข้อมูลจำลองทั้งหมด ไม่มีข้อมูลผู้ป่วยจริง ·
+  อัปเดต ส.ค. 2569 · <a href="https://github.com/mkungsuki?tab=repositories" style="color:inherit">github.com/mkungsuki</a>
+</footer>
+</body>
+</html>
